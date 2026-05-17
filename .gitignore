@@ -1,0 +1,43 @@
+
+# InsForge & AI agent skills
+.insforge
+.agent
+.agents
+.augment
+.claude
+.cline
+.github/copilot*
+.kilocode
+.qoder
+.qwen
+.roo
+.trae
+.windsurf
+
+# VS Code fork checkouts (each becomes its own large repo; not tracked here)
+Surya AI Code Mac/upstream/
+Surya AI Code Windows/upstream/
+Surya AI Code Linux/upstream/
+
+# Build outputs
+**/node_modules/
+**/__pycache__/
+**/.venv/
+**/out/
+**/dist/
+**/.DS_Store
+
+# Branding work-files
+surya-build/branding/.ico_tmp/
+surya-build/branding/surya.iconset/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.p12
+*.key
+
+# IDE local
+.vscode/
+.idea/

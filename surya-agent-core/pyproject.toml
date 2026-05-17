@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "surya-agent-core"
+version = "0.1.0"
+description = "Surya AI IDE — CrewAI hierarchical 9-agent sidecar, InsForge Model Gateway routed."
+authors = ["Surya AI <pvshariharan324@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "surya" }]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+crewai = "^0.86"
+crewai-tools = "^0.17"
+openai = "^1.50"
+pydantic = ">=2.0,<2.6"
+playwright = "^1.45"
+gitpython = "^3.1"
+httpx = "^0.27"
+python-dotenv = "^1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-asyncio = "^0.23"
+ruff = "^0.6"
+
+[tool.poetry.scripts]
+surya-agent = "surya.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100

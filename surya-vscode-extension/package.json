@@ -1,0 +1,57 @@
+{
+  "name": "surya-ai",
+  "displayName": "Surya AI",
+  "description": "Surya AI — CrewAI hierarchical 9-agent crew (Architect, Planner, Researcher, Implementer, Coder, Builder, Reviewer, Tester, Verifier) powered by InsForge Model Gateway.",
+  "version": "0.1.0",
+  "publisher": "surya",
+  "license": "Proprietary",
+  "engines": { "vscode": "^1.70.0" },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "surya-ai",
+          "title": "Surya AI",
+          "icon": "media/surya-icon.png"
+        }
+      ]
+    },
+    "views": {
+      "surya-ai": [
+        { "type": "webview", "id": "surya-ai.chat",   "name": "Chat" },
+        { "type": "webview", "id": "surya-ai.agents", "name": "Agents" },
+        { "type": "webview", "id": "surya-ai.plan",   "name": "Plan" }
+      ]
+    },
+    "commands": [
+      { "command": "surya-ai.run",          "title": "Surya AI: Run goal" },
+      { "command": "surya-ai.signIn",       "title": "Surya AI: Sign in to InsForge" },
+      { "command": "surya-ai.restartAgent", "title": "Surya AI: Restart agent sidecar" }
+    ],
+    "configuration": {
+      "title": "Surya AI",
+      "properties": {
+        "surya.userId": {
+          "type": "string",
+          "default": "",
+          "description": "User id used for the 5h quota window."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch":   "tsc -w -p .",
+    "build:webview": "vite build --config webview-ui/vite.config.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^16",
+    "@types/vscode": "^1.70.0",
+    "typescript": "^5.4"
+  },
+  "dependencies": {}
+}
